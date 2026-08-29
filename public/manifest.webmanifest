@@ -1,7 +1,7 @@
 {
-  "name": "SS Tech Services & Academy",
+  "name": "SS Tech Services",
   "short_name": "SS Tech",
-  "description": "IT Services, Training, Placement & LMS by SS Tech Services & Academy.",
+  "description": "IT Services, Training, Placement & LMS by SS Tech Services.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

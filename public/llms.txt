@@ -1,0 +1,16 @@
+# SS Tech Services
+
+> Enterprise IT services and certified tech training academy based in Lucknow, India — Cyber Security, Cloud, DevOps, Networking, Linux and Full Stack, with placement support.
+
+## Pages
+
+- [Home](/): Overview of services, academy and placement.
+- [About](/#/about): Company story, mission, vision and values.
+- [IT Services](/#/services): Enterprise IT services catalogue.
+- [Training Academy](/#/academy): Certified courses across 9 tech domains.
+- [Internship](/#/internship): Paid internship programs with mentor reviews.
+- [Placement](/#/placement): Placement cell and hiring partners.
+- [Projects](/#/projects): Selected client and student projects.
+- [Careers](/#/careers): Open roles at SS Tech Services.
+- [Contact](/#/contact): Address, phone, email and inquiry form.
+- [Quick Support](/#/quick-support): Raise a support ticket.
