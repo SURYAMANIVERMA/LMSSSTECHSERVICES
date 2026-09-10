@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
-import { SITE, NAV, IT_SERVICES } from "@/data/site";
+import { SITE, NAV, TRAINING_TRACKS } from "@/data/site";
 import logo from "@/assets/logo.png";
 
 export default function Footer() {
@@ -9,18 +9,22 @@ export default function Footer() {
       <div className="container mx-auto container-px py-16 grid gap-10 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={logo} alt="SS TECH SERVICES & ACADEMY" className="h-12 w-12 object-contain bg-white/10 rounded-lg p-1" width={48} height={48} loading="lazy" />
+            <img src={logo} alt="SS TECH SERVICES" className="h-12 w-12 object-contain bg-white/10 rounded-lg p-1" width={48} height={48} loading="lazy" />
             <div className="font-display font-bold leading-tight">
               <div className="text-sm">SS TECH SERVICES</div>
-              <div className="text-[10px] tracking-[0.2em] text-accent">& ACADEMY</div>
             </div>
           </div>
           <p className="text-sm text-primary-foreground/70 leading-relaxed">
-            Enterprise IT services, certified training academy, and a placement cell that bridges talent and opportunity.
+            Certified tech training, hands-on labs, live mentors and a placement cell that bridges talent and opportunity.
           </p>
           <div className="flex gap-3 mt-5">
-            {[Facebook, Linkedin, Instagram, Youtube].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="h-9 w-9 rounded-full bg-white/10 hover:bg-accent grid place-items-center transition-colors">
+            {[
+              { Icon: Facebook, label: "Follow us on Facebook" },
+              { Icon: Linkedin, label: "Follow us on LinkedIn" },
+              { Icon: Instagram, label: "Follow us on Instagram" },
+              { Icon: Youtube, label: "Subscribe on YouTube" },
+            ].map(({ Icon, label }) => (
+              <a key={label} href="#" aria-label={label} className="h-9 w-9 rounded-full bg-white/10 hover:bg-accent grid place-items-center transition-colors">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
@@ -35,9 +39,9 @@ export default function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="font-display font-semibold mb-4">IT Services</h4>
+          <h4 className="font-display font-semibold mb-4">Training Tracks</h4>
           <ul className="space-y-2 text-sm text-primary-foreground/75">
-            {IT_SERVICES.slice(0,6).map(s => <li key={s.title}>{s.title}</li>)}
+            {TRAINING_TRACKS.slice(0,6).map(t => <li key={t}>{t}</li>)}
           </ul>
         </div>
         <div>
@@ -53,7 +57,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/10">
         <div className="container mx-auto container-px py-5 flex flex-col md:flex-row gap-2 items-center justify-between text-xs text-primary-foreground/60">
-          <span>© {new Date().getFullYear()} SS TECH SERVICES & ACADEMY. All rights reserved.</span>
+            <span>© 2026 SS TECH SERVICES. All rights reserved.</span>
           <span>{SITE.tagline}</span>
         </div>
       </div>
