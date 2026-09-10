@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { ALL_COURSES } from "@/data/site";
+import { TRAINING_TRACKS } from "@/data/site";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Enter your full name").max(80),
@@ -21,7 +22,7 @@ export default function InquiryForm({ defaultCourse }: { defaultCourse?: string 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const parsed = schema.safeParse(form);
     if (!parsed.success) {
@@ -32,11 +33,24 @@ export default function InquiryForm({ defaultCourse }: { defaultCourse?: string 
     }
     setErrors({});
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      toast({ title: "Inquiry received", description: "Our counsellor will contact you within 24 hours." });
-      setForm({ name: "", email: "", phone: "", course: defaultCourse ?? "", message: "" });
-    }, 700);
+    const { error } = await supabase.from("inquiries").insert({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      phone: parsed.data.phone,
+      service: parsed.data.course,
+      message: parsed.data.message?.trim() || null,
+    });
+    setLoading(false);
+    if (error) {
+      toast({
+        title: "Could not send your inquiry",
+        description: `${error.message} — please call +91 8808227885 instead.`,
+        variant: "destructive",
+      });
+      return;
+    }
+    toast({ title: "Inquiry received", description: "Our team will contact you within 24 hours." });
+    setForm({ name: "", email: "", phone: "", course: defaultCourse ?? "", message: "" });
   };
 
   return (
@@ -59,18 +73,18 @@ export default function InquiryForm({ defaultCourse }: { defaultCourse?: string 
         {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
       </div>
       <div>
-        <Label>Course Interested In</Label>
+        <Label htmlFor="service">Course Interested In</Label>
         <Select value={form.course} onValueChange={v => setForm({ ...form, course: v })}>
-          <SelectTrigger><SelectValue placeholder="Select a course" /></SelectTrigger>
+          <SelectTrigger id="service" aria-label="Service interested in"><SelectValue placeholder="Select a course" /></SelectTrigger>
           <SelectContent className="max-h-72">
-            {ALL_COURSES.map(c => <SelectItem key={c.name} value={c.name}>{c.name} — {c.category}</SelectItem>)}
+            {TRAINING_TRACKS.map(t => <SelectItem key={t} value={t}>{t}</SelectItem>)}
           </SelectContent>
         </Select>
         {errors.course && <p className="text-xs text-destructive mt-1">{errors.course}</p>}
       </div>
       <div>
         <Label htmlFor="message">Message (optional)</Label>
-        <Textarea id="message" rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="Tell us your goals" />
+        <Textarea id="message" rows={4} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} placeholder="Tell us about your requirement" />
       </div>
       <Button type="submit" size="lg" disabled={loading} className="bg-gradient-accent border-0 shadow-accent">
         {loading ? "Sending…" : "Submit Inquiry"}
