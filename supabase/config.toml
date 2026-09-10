@@ -1,0 +1,13 @@
+project_id = "fmuwxszpbqoiapbufzfy"
+
+[functions]
+  [functions.auth-email-hook]
+    verify_jwt = false
+  [functions.preview-transactional-email]
+    verify_jwt = false
+  [functions.razorpay-create-order]
+    verify_jwt = false
+  [functions.razorpay-verify]
+    verify_jwt = false
+  [functions.booking-status]
+    verify_jwt = false
