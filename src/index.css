@@ -169,4 +169,36 @@ All colors MUST be HSL.
 }
 .wa-pulse { animation: wa-pulse 2s infinite; }
 
+/* Live / running visuals */
+@keyframes ken-burns {
+  0% { transform: scale(1) translate3d(0,0,0); }
+  50% { transform: scale(1.12) translate3d(-1.5%, -1.5%, 0); }
+  100% { transform: scale(1) translate3d(0,0,0); }
+}
+.animate-ken-burns { animation: ken-burns 22s ease-in-out infinite; }
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(1200%); opacity: 0; }
+}
+.animate-scan { animation: scan-line 6s linear infinite; }
+
+@keyframes grid-drift {
+  0% { background-position: 0 0; }
+  100% { background-position: 32px 32px; }
+}
+.animate-grid { animation: grid-drift 8s linear infinite; }
+
+@keyframes live-dot {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--accent) / 0.7); opacity: 1; }
+  70% { box-shadow: 0 0 0 10px hsl(var(--accent) / 0); opacity: .7; }
+}
+.live-dot { animation: live-dot 1.8s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ken-burns, .animate-scan, .animate-grid, .live-dot, .animate-float { animation: none !important; }
+}
+
 html { scroll-behavior: smooth; }
