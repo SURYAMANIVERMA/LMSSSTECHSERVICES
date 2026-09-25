@@ -1,6 +1,7 @@
 import { SITE } from "@/data/site";
 
 export default function WhatsAppFab() {
+<<<<<<< Updated upstream
   const msg = encodeURIComponent("Hi SS TECH SERVICES, I'd like to know more about your courses.");
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
@@ -10,6 +11,19 @@ export default function WhatsAppFab() {
 >
   <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
   🎓 New batch starting · Enrol now
+=======
+  const msg = encodeURIComponent("Hi SS TECH SERVICES & ACADEMY, I'd like to know more about your courses.");
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+<a
+  href="https://apps.sstechservices.org/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden sm:flex items-center gap-2 rounded-full bg-gradient-accent px-4 py-2 text-xs font-bold text-white shadow-accent hover:scale-105 transition-transform"
+>
+  <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+  ⚡ Quick Support · Reply in 5 min
+>>>>>>> Stashed changes
 </a>
       <a
         href={`https://wa.me/${SITE.whatsapp}?text=${msg}`}

@@ -3,14 +3,21 @@ import { Card } from "@/components/ui/card";
 import InquiryForm from "@/components/InquiryForm";
 import { SITE } from "@/data/site";
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+<<<<<<< Updated upstream
 import Seo from "@/components/Seo";
 import contact from "@/assets/contact.jpg";
+=======
+>>>>>>> Stashed changes
 
 export default function Contact() {
   return (
     <>
+<<<<<<< Updated upstream
       <Seo title="Contact SS TECH SERVICES — Lucknow" description="Reach SS TECH SERVICES in Vibhuti Khand, Gomti Nagar, Lucknow. Call +91 8808227885 or email surya@sstechservices.org." path="/contact" />
       <PageHero image={contact} imageAlt="SS TECH SERVICES academy admissions desk" live="Replies within 30 minutes" eyebrow="Contact" title={<>Let's <span className="text-accent">talk.</span></>} sub="Reach out for course and batch enquiries, fees, corporate training, partnerships or careers." />
+=======
+      <PageHero eyebrow="Contact" title={<>Let's <span className="text-accent">talk.</span></>} sub="Reach out for course inquiries, enterprise services, partnerships or careers." />
+>>>>>>> Stashed changes
       <section className="section-py container mx-auto container-px grid lg:grid-cols-5 gap-10">
         <div className="lg:col-span-2 space-y-5">
           <Card className="p-6 border-border">
@@ -42,7 +49,11 @@ export default function Contact() {
       <section className="pb-16 container mx-auto container-px">
         <div className="rounded-2xl overflow-hidden border border-border shadow-elegant">
           <iframe
+<<<<<<< Updated upstream
             title="SS TECH SERVICES Location"
+=======
+            title="SS TECH SERVICES & ACADEMY Location"
+>>>>>>> Stashed changes
             src="https://www.google.com/maps?q=Levana+Cyber+Heights,+Vibhuti+Khand,+Gomti+Nagar,+Lucknow&output=embed"
             width="100%"
             height="420"

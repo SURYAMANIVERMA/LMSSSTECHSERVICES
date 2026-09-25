@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 project_id = "fmuwxszpbqoiapbufzfy"
 
 [functions]
@@ -11,3 +12,6 @@ project_id = "fmuwxszpbqoiapbufzfy"
     verify_jwt = false
   [functions.booking-status]
     verify_jwt = false
+=======
+project_id = "fmuwxszpbqoiapbufzfy"
+>>>>>>> Stashed changes

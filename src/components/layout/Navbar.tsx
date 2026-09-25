@@ -24,9 +24,16 @@ export default function Navbar() {
       </div>
       <div className="container mx-auto container-px flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+<<<<<<< Updated upstream
           <img src={logo} alt="SS TECH SERVICES logo" className="h-12 w-12 object-contain" width={48} height={48} />
           <div className="leading-tight">
             <div className="font-display text-base sm:text-lg font-bold tracking-tight text-primary">SS TECH SERVICES</div>
+=======
+          <img src={logo} alt="SS TECH SERVICES & ACADEMY logo" className="h-12 w-12 object-contain" width={48} height={48} />
+          <div className="leading-tight">
+            <div className="font-display text-base sm:text-lg font-bold tracking-tight text-primary">SS TECH SERVICES</div>
+            <div className="text-[10px] sm:text-xs font-semibold tracking-[0.2em] text-accent">& ACADEMY</div>
+>>>>>>> Stashed changes
           </div>
         </Link>
 
@@ -47,7 +54,11 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden xl:flex items-center gap-2">
+<<<<<<< Updated upstream
           <Button asChild variant="outline" size="sm"><Link to="/lms/auth">Login</Link></Button>
+=======
+          <Button asChild variant="outline" size="sm"><Link to="/lms">Login</Link></Button>
+>>>>>>> Stashed changes
           <Button asChild size="sm" className="bg-gradient-accent shadow-accent border-0"><Link to="/contact">Enroll Now</Link></Button>
         </div>
 
@@ -80,7 +91,11 @@ export default function Navbar() {
               </NavLink>
             ))}
             <div className="flex gap-2 pt-3">
+<<<<<<< Updated upstream
               <Button asChild variant="outline" className="flex-1"><Link to="/lms/auth" onClick={() => setOpen(false)}>Login</Link></Button>
+=======
+              <Button asChild variant="outline" className="flex-1"><Link to="/lms" onClick={() => setOpen(false)}>Login</Link></Button>
+>>>>>>> Stashed changes
               <Button asChild className="flex-1 bg-gradient-accent border-0"><Link to="/contact" onClick={() => setOpen(false)}>Enroll</Link></Button>
             </div>
           </nav>

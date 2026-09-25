@@ -169,6 +169,7 @@ All colors MUST be HSL.
 }
 .wa-pulse { animation: wa-pulse 2s infinite; }
 
+<<<<<<< Updated upstream
 /* Live / running visuals */
 @keyframes ken-burns {
   0% { transform: scale(1) translate3d(0,0,0); }
@@ -201,4 +202,6 @@ All colors MUST be HSL.
   .animate-ken-burns, .animate-scan, .animate-grid, .live-dot, .animate-float { animation: none !important; }
 }
 
+=======
+>>>>>>> Stashed changes
 html { scroll-behavior: smooth; }

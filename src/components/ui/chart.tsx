@@ -93,8 +93,11 @@ const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
     React.ComponentProps<"div"> & {
+<<<<<<< Updated upstream
       payload?: any[];
       label?: React.ReactNode;
+=======
+>>>>>>> Stashed changes
       hideLabel?: boolean;
       hideIndicator?: boolean;
       indicator?: "line" | "dot" | "dashed";
@@ -232,9 +235,13 @@ const ChartLegend = RechartsPrimitive.Legend;
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
+<<<<<<< Updated upstream
     {
       payload?: any[];
       verticalAlign?: "top" | "bottom" | "middle";
+=======
+    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+>>>>>>> Stashed changes
       hideIcon?: boolean;
       nameKey?: string;
     }

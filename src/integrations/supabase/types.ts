@@ -14,6 +14,7 @@ export type Database = {
   }
   public: {
     Tables: {
+<<<<<<< Updated upstream
       activity_log: {
         Row: {
           action: string
@@ -683,10 +684,15 @@ export type Database = {
       profiles: {
         Row: {
           avatar_url: string | null
+=======
+      profiles: {
+        Row: {
+>>>>>>> Stashed changes
           created_at: string
           display_name: string | null
           email: string | null
           id: string
+<<<<<<< Updated upstream
           mobile_number: string | null
           phone: string | null
           status: string
@@ -694,10 +700,15 @@ export type Database = {
         }
         Insert: {
           avatar_url?: string | null
+=======
+        }
+        Insert: {
+>>>>>>> Stashed changes
           created_at?: string
           display_name?: string | null
           email?: string | null
           id: string
+<<<<<<< Updated upstream
           mobile_number?: string | null
           phone?: string | null
           status?: string
@@ -705,10 +716,15 @@ export type Database = {
         }
         Update: {
           avatar_url?: string | null
+=======
+        }
+        Update: {
+>>>>>>> Stashed changes
           created_at?: string
           display_name?: string | null
           email?: string | null
           id?: string
+<<<<<<< Updated upstream
           mobile_number?: string | null
           phone?: string | null
           status?: string
@@ -968,6 +984,8 @@ export type Database = {
           status?: Database["public"]["Enums"]["booking_status"]
           updated_at?: string
           user_id?: string | null
+=======
+>>>>>>> Stashed changes
         }
         Relationships: []
       }
@@ -1063,6 +1081,7 @@ export type Database = {
           },
         ]
       }
+<<<<<<< Updated upstream
       trainer_course_assignments: {
         Row: {
           assigned_by: string | null
@@ -1107,6 +1126,8 @@ export type Database = {
           },
         ]
       }
+=======
+>>>>>>> Stashed changes
       user_roles: {
         Row: {
           created_at: string
@@ -1133,6 +1154,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+<<<<<<< Updated upstream
       can_manage_course: { Args: { _course_id: string }; Returns: boolean }
       get_booking_public: {
         Args: { p_ref: string }
@@ -1183,6 +1205,8 @@ export type Database = {
           question: string
         }[]
       }
+=======
+>>>>>>> Stashed changes
       get_ticket_public: {
         Args: { p_ref: string }
         Returns: {
@@ -1210,6 +1234,7 @@ export type Database = {
         }
         Returns: boolean
       }
+<<<<<<< Updated upstream
       is_assigned_trainer: { Args: { _course_id: string }; Returns: boolean }
       is_enrolled: { Args: { _course_id: string }; Returns: boolean }
       normalize_mobile: { Args: { _raw: string }; Returns: string }
@@ -1226,6 +1251,11 @@ export type Database = {
     Enums: {
       app_role: "admin" | "engineer" | "student" | "trainer"
       booking_status: "pending" | "in_progress" | "completed" | "cancelled"
+=======
+    }
+    Enums: {
+      app_role: "admin" | "engineer"
+>>>>>>> Stashed changes
       ticket_status: "new" | "assigned" | "in_progress" | "resolved" | "closed"
     }
     CompositeTypes: {
@@ -1242,12 +1272,20 @@ export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
     | { schema: keyof DatabaseWithoutInternals },
+<<<<<<< Updated upstream
   TableName extends (DefaultSchemaTableNameOrOptions extends {
+=======
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+>>>>>>> Stashed changes
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
         DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+<<<<<<< Updated upstream
     : never) = never,
+=======
+    : never = never,
+>>>>>>> Stashed changes
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1271,11 +1309,19 @@ export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
+<<<<<<< Updated upstream
   TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never) = never,
+=======
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+>>>>>>> Stashed changes
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1296,11 +1342,19 @@ export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
     | { schema: keyof DatabaseWithoutInternals },
+<<<<<<< Updated upstream
   TableName extends (DefaultSchemaTableNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never) = never,
+=======
+  TableName extends DefaultSchemaTableNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    : never = never,
+>>>>>>> Stashed changes
 > = DefaultSchemaTableNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1321,11 +1375,19 @@ export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
     | { schema: keyof DatabaseWithoutInternals },
+<<<<<<< Updated upstream
   EnumName extends (DefaultSchemaEnumNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
     : never) = never,
+=======
+  EnumName extends DefaultSchemaEnumNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    : never = never,
+>>>>>>> Stashed changes
 > = DefaultSchemaEnumNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1338,11 +1400,19 @@ export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
     | { schema: keyof DatabaseWithoutInternals },
+<<<<<<< Updated upstream
   CompositeTypeName extends (PublicCompositeTypeNameOrOptions extends {
     schema: keyof DatabaseWithoutInternals
   }
     ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
     : never) = never,
+=======
+  CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+    schema: keyof DatabaseWithoutInternals
+  }
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    : never = never,
+>>>>>>> Stashed changes
 > = PublicCompositeTypeNameOrOptions extends {
   schema: keyof DatabaseWithoutInternals
 }
@@ -1354,8 +1424,12 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
+<<<<<<< Updated upstream
       app_role: ["admin", "engineer", "student", "trainer"],
       booking_status: ["pending", "in_progress", "completed", "cancelled"],
+=======
+      app_role: ["admin", "engineer"],
+>>>>>>> Stashed changes
       ticket_status: ["new", "assigned", "in_progress", "resolved", "closed"],
     },
   },
